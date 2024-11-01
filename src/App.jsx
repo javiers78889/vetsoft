@@ -1,26 +1,28 @@
-import { useLoading } from './hooks/useLoading'
-import { ConteoPersonas } from './widgets/Conteo/Conteo'
-import { Descripcion } from './widgets/Descripcion/Descripcion'
-import { Footer } from './widgets/Footer/Footer'
-import { Heroe } from './widgets/heroe/Heroe'
+import { Route, Routes } from 'react-router-dom'
+import { Inicio } from './Components/Inicio'
 import { Loading } from './widgets/Loading/Loading'
-import { Slider } from './widgets/Slider/Slider'
-import { Tarifas } from './widgets/Tarifas/Tarifas'
+import { Login } from './Components/Login'
+import { Dashboard } from './Components/Dashboard'
+
+import { useContext } from 'react'
+import { UserContext } from './context/UserContext'
+
 function App() {
 
-  const { isLoading } = useLoading()
+const {isLoading}= useContext(UserContext)
   return (
     <>
       {isLoading ? (
         <Loading />
       ) : (
         <>
-          <Heroe />
-          <Slider />
-          <Descripcion />
-          <Tarifas />
-          <ConteoPersonas/>
-          <Footer />
+         
+            <Routes>
+              <Route path='/*' element={<Inicio />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/dashboard' element={<Dashboard />} />
+
+            </Routes>
         </>
       )}
 

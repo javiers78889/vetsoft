@@ -31,7 +31,7 @@ export const ConteoPersonas = () => {
 
     return (
 
-        <div className=" py-24 sm:py-32 text-center bg-gradient-to-b from-red-500 to-black ">
+        <div id='clientes' className=" py-24 sm:py-32 text-center bg-gradient-to-b from-red-500 to-black ">
             <div className=' flex justify-center items-center'>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -36,7 +36,7 @@ function classNames(...classes) {
 
 export const Tarifas = () => {
     return ( 
-        <div className="relative isolate  px-6 py-24 sm:py-32 lg:px-8 bg-gradient-to-b from-black via-orange-500 to-red-500">
+        <div id='tarifas' className="relative isolate  px-6 py-24 sm:py-32 lg:px-8 bg-gradient-to-b from-black via-orange-500 to-red-500">
             <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
                 <div
                     style={{

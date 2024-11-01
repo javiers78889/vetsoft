@@ -3,20 +3,24 @@
 import { useState } from 'react'
 import { Bars3Icon} from '@heroicons/react/24/outline'
 import { HeroePhone } from './HeroePhone'
-import dog from '../../assets/dog.svg'
+
+import { Logo } from '../Logo/Logo'
+import { Link } from 'react-router-dom'
+
 
 const navigation = [
 
 
-    { name: 'Producto', href: '#' },
-    { name: 'Tarifas', href: '#' },
-    { name: 'Clientes', href: '#' },
-    { name: 'Contacto', href: '#' },
+    { name: 'Beneficios', href: '#beneficios' },
+    { name: 'Tarifas', href: '#tarifas' },
+    { name: 'Clientes', href: '#clientes' },
+    { name: 'Contacto', href: '#contacto' },
 ]
 
 export const Heroe = () => {
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
 
     const OpenClose = () => {
         if (mobileMenuOpen) {
@@ -30,16 +34,7 @@ export const Heroe = () => {
         <div className="bg-white">
             <header className="absolute inset-x-0 top-0 z-50">
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
-                    <div className="flex lg:flex-1">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <img
-                                alt=""
-                                src={dog}
-                                className="h-14 w-auto"
-                            />
-                        </a>
-                    </div>
+                   <Logo/>
                     <div className="flex lg:hidden">
                         <button
                             type="button"
@@ -52,15 +47,15 @@ export const Heroe = () => {
                     </div>
                     <div className="hidden lg:flex lg:gap-x-12">
                         {navigation.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-white">
+                            <a key={item.name} href={item.href} className="text-sm/6 transition-transform duration-3000 transform hover:scale-125 hover:text-green-400 font-semibold text-white">
                                 {item.name}
                             </a>
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm/6 font-semibold text-white">
+                        <Link to='/login' className="text-sm/6 font-semibold text-white hover:hover:text-green-400 hover:scale-125">
                             Log in <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        </Link>
                     </div>
                 </nav>
                         <HeroePhone mobileMenuOpen={mobileMenuOpen} OpenClose={OpenClose} navigation={navigation}/>
